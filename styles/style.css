@@ -19,7 +19,9 @@ html {
   background-color: #1b1919;
 
   /* Это мои стили*/
-  padding: 133px 30px;
+  display: flex;
+  align-items: center;
+  /*padding: 133px 30px;*/
 }
 
 h1,
@@ -48,8 +50,6 @@ ol {
   display: flex;
   justify-content: space-between;
   align-items: end;
-  /*width: 1140px;
-  height: 534px;*/
   gap: 30px;
 }
 
@@ -191,9 +191,9 @@ ol {
 }
 
 .search-form__label-text {
+
   /*Так в разных браузерах будут нужные вам стили.
   Это трюк.*/
-
   appearance: none;
 }
 
@@ -236,7 +236,6 @@ ol {
 
 .search-form__label:has(:focus-visible) {
   outline: 1px solid #fff;
-  /*outline-offset: 1px; }*/
 }
 
 .search-form__label:active {
