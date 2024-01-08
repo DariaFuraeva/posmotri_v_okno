@@ -47,7 +47,7 @@ ol {
 
 .content {
   width: 1140px;
-  height: 534px;
+  min-height: 534px;
   margin: auto;
   display: flex;
   justify-content: space-between;
@@ -78,11 +78,17 @@ ol {
 .search-form {
   display: flex;
   justify-content: space-between;
- /* margin-bottom: 6px;*/
+  margin-bottom: 6px;
 }
 
-.search-form__label:not(:last-child) {
-  margin-right: 4px;
+.search-form__checkbox-list {
+  display: flex;
+  gap: 15px;
+}
+
+.search-form__label {
+  display: flex;
+  align-items: center;
 }
 
 .content__details {
@@ -169,6 +175,7 @@ ol {
   white-space: nowrap;
   overflow: hidden;
   max-width: 200px;
+  margin-bottom: 6px;
 }
 
 .content__video-card-description {
@@ -208,6 +215,11 @@ ol {
   color: #fff;
   font-size: 18px;
 }
+
+.search-form__textfield:focus {
+  outline: none;
+}
+
 
 .search-form__pseudo-checkbox {
   cursor: pointer;
