@@ -63,8 +63,8 @@ ol {
 
 .result__video-container {
   position: relative;
-  width: 711px;
-  height: 386px;
+  inline-size: 711px;
+  block-size: 386px;
   margin-bottom: 16px;
 }
 
@@ -79,6 +79,7 @@ ol {
   display: flex;
   justify-content: space-between;
   margin-bottom: 6px;
+  align-items: flex-start;
 }
 
 .search-form__checkbox-list {
@@ -89,11 +90,14 @@ ol {
 .search-form__label {
   display: flex;
   align-items: center;
+  width: fit-content;
+  cursor: pointer;
+  appearance: none;
 }
 
 .content__details {
-  width: 100%;
-  height: 100%;
+  block-size: 100%;
+  inline-size: 100%;
   display: flex;
   flex-direction: column;
   gap: 26px;
@@ -101,7 +105,7 @@ ol {
 
 .content__list {
   position: relative;
-  height: 298px;
+  block-size: 298px;
   overflow: auto;
   display: flex;
   flex-direction: column;
@@ -110,7 +114,7 @@ ol {
 
 /*
 "Это нужно было, чтобы убрать отступ у послежнего элемента,
-но не нужно, т. к. есть gap.
+но не нужно, т. к. есть gap у content__list.
 
 .content__list-item:not(:last-child) {
   margin-bottom: 32px;
@@ -121,12 +125,12 @@ ol {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: start;
+  align-items: flex-start;
 }
 
 .content__video-card-thumbnail {
-  width: 194px;
-  height: 103px;
+  min-inline-size: 194px;
+  block-size: 103px;
   object-fit: cover;
   object-position: center;
 }
@@ -134,6 +138,7 @@ ol {
 .content__video-card-description-container {
   width: 100%;
   height: 100%;
+  flex-grow: 1;
 }
 
 .search-form__fieldset-title {
@@ -157,7 +162,7 @@ ol {
 .content__card-link {
   display: block;
   text-decoration: none;
-  color: #fff;
+  color: inherit;
   margin: 2px;
 }
 
@@ -219,7 +224,6 @@ ol {
 .search-form__textfield:focus {
   outline: none;
 }
-
 
 .search-form__pseudo-checkbox {
   cursor: pointer;
@@ -289,17 +293,8 @@ ol {
   outline: none;
 }
 
-.content__card-link:focus {
-  outline: none;
-}
-
 .button:active {
   background-color: #545050;
-}
-
-.button:focus-visible {
-  outline: 1px solid #fff;
-  outline-offset: 2px;
 }
 
 .button:hover {
@@ -307,8 +302,22 @@ ol {
   cursor: pointer;
 }
 
+.button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+
 .content__card-link:active {
   background-color: #545050;
+}
+
+.content__card-link:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .content__card-link:focus-visible {
@@ -316,7 +325,3 @@ ol {
   /*outline-offset: 2px;*/
 }
 
-.content__card-link:hover {
-  text-decoration: underline;
-  cursor: pointer;
-}
